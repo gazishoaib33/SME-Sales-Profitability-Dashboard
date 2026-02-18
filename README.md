@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/project_banner.svg" width="900">
+</p>
+
 # 📊 SME Sales Data Analysis Project 
 
 This project presents an end-to-end data analysis workflow using a simulated retail sales dataset. It demonstrates data cleaning, feature engineering, and financial performance analysis using transactional sales data.
