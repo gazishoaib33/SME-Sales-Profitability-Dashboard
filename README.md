@@ -111,17 +111,17 @@ Planned improvements include:
 
 ### Revenue by Product
 <p align="center">
-  <img src="assets/revenue_by_product.svg" width="700">
+  <img src="assets/revenue_by_product.png" width="700">
 </p>
 
 ### Profit by Region
 <p align="center">
-  <img src="assets/profit_by_region.svg" width="700">
+  <img src="assets/profit_by_region.png" width="700">
 </p>
 
 ### Monthly Revenue Trend
 <p align="center">
-  <img src="assets/monthly_revenue_trend.svg" width="700">
+  <img src="assets/monthly_revenue_trend.png" width="700">
 </p>
 
 ---
