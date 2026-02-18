@@ -1,3 +1,21 @@
+# 📊 SME Sales Data Analysis Project 
+
+This project presents an end-to-end data analysis workflow using a simulated retail sales dataset. It demonstrates data cleaning, feature engineering, and financial performance analysis using transactional sales data.
+
+The objective of this project is to:
+
+- Analyze product-level performance
+- Evaluate regional sales trends
+- Calculate revenue, cost, and profit metrics
+- Perform exploratory data analysis (EDA)
+- Prepare structured datasets for visualization and business insights
+
+The repository includes both the raw dataset and a cleaned version with engineered financial features (Revenue, Cost, Profit), making it suitable for analytical modeling, dashboard creation, and reporting.
+
+This project is designed to showcase practical data analysis skills, structured project organization, and clean dataset preparation for real-world business scenarios.
+
+---
+
 # SME Sales Profitability Dashboard
 
 A professional data analytics portfolio project focused on understanding sales performance and profitability patterns for Small and Medium Enterprises (SMEs) using **Power BI** and **Python**.
