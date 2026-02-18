@@ -14,6 +14,15 @@ The repository includes both the raw dataset and a cleaned version with engineer
 
 This project is designed to showcase practical data analysis skills, structured project organization, and clean dataset preparation for real-world business scenarios.
 
+## 🛠️ Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+- Git & GitHub
+
 ---
 
 # SME Sales Profitability Dashboard
