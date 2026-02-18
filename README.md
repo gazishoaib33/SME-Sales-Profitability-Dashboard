@@ -107,6 +107,25 @@ Planned improvements include:
 
 ---
 
+## 📊 Sample Visualizations
+
+### Revenue by Product
+<p align="center">
+  <img src="assets/screenshots/revenue_by_product.svg" width="700">
+</p>
+
+### Profit by Region
+<p align="center">
+  <img src="assets/screenshots/profit_by_region.svg" width="700">
+</p>
+
+### Monthly Revenue Trend
+<p align="center">
+  <img src="assets/screenshots/monthly_revenue_trend.svg" width="700">
+</p>
+
+---
+
 ## Author
 
 **Gazi Shoaib**
