@@ -1,169 +1,96 @@
-<p align="center">
-  <img src="assets/project_banner.svg" width="900">
-</p>
-
-# 📊 SME Sales Data Analysis Project 
-
-This project presents an end-to-end data analysis workflow using a simulated retail sales dataset. It demonstrates data cleaning, feature engineering, and financial performance analysis using transactional sales data.
-
-The objective of this project is to:
-
-- Analyze product-level performance
-- Evaluate regional sales trends
-- Calculate revenue, cost, and profit metrics
-- Perform exploratory data analysis (EDA)
-- Prepare structured datasets for visualization and business insights
-
-The repository includes both the raw dataset and a cleaned version with engineered financial features (Revenue, Cost, Profit), making it suitable for analytical modeling, dashboard creation, and reporting.
-
-This project is designed to showcase practical data analysis skills, structured project organization, and clean dataset preparation for real-world business scenarios.
-
-## 🛠️ Tech Stack
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-- Git & GitHub
-
----
-
 # SME Sales Profitability Dashboard
 
-A professional data analytics portfolio project focused on understanding sales performance and profitability patterns for Small and Medium Enterprises (SMEs) using **Power BI** and **Python**.
+A modular, production-ready sales analytics project for SME transactional data. It includes KPI tracking, statistical diagnostics, regression analysis, and machine learning-based profit prediction.
 
----
+## Project Structure
 
-## Project Overview
+```text
+project/
+│── data/
+│── notebooks/
+│── src/
+│   ├── kpi.py
+│   ├── statistical_analysis.py
+│   ├── regression_analysis.py
+│   ├── ml_model.py
+│── main.py
+│── README.md
+│── requirements.txt
+```
 
-This project is designed to analyze SME sales data, transform it into actionable insights, and present business performance through interactive dashboards and data storytelling.
+## Features
 
-The workflow includes:
-- Collecting raw sales data
-- Cleaning and transforming data using Python
-- Engineering profitability metrics (cost, profit, margin)
-- Building dashboards in Power BI for executive reporting
+### 1) KPI Summary
+- Total Revenue
+- Total Profit
+- Average Order Value (AOV)
 
----
+### 2) Statistical Analysis
+- Correlation matrix for numeric columns
+- Variance for numeric columns
+- Implemented using **pandas only**
 
-## KPIs
+### 3) Regression Analysis
+- Model: `LinearRegression` (scikit-learn)
+- Features: `Quantity`, `Discount`, `Revenue`
+- Target: `Profit`
+- Split: `train_test_split(test_size=0.2, random_state=42)`
+- Outputs:
+  - R² Score
+  - Mean Squared Error (MSE)
+  - Coefficients
+  - Intercept
 
-The project tracks key business indicators including:
-- **Total Sales Revenue**
-- **Total Cost**
-- **Total Profit**
-- **Average Profit Margin (%)**
-- **Top Performing Products / Categories**
-- **Regional Sales & Profitability Trends**
-- **Monthly Sales Growth**
+### 4) Machine Learning Model
+- Model: `RandomForestRegressor`
+- Target: `Profit`
+- Parameters: `n_estimators=100`, `max_depth=5`, `random_state=42`
+- Output: R² Score
 
----
+## Installation
 
-## Tools Used
+```bash
+pip install -r requirements.txt
+```
 
-- **Python** (Pandas, NumPy, Matplotlib, Seaborn) for data cleaning and analysis
-- **Jupyter Notebook** for exploratory analysis and reproducible workflows
-- **Power BI** for interactive dashboards and KPI visualization
-- **Git & GitHub** for version control and portfolio presentation
+## Usage
 
----
+Run the full workflow:
 
-## Dataset Description
+```bash
+python main.py
+```
 
-The dataset contains transactional SME sales records. Typical fields include:
-- Order/Transaction Date
-- Product or Category
-- Quantity Sold
-- Unit Price
-- Sales Amount
-- Region / Customer Segment
+Run individual modules:
 
-During processing, additional profitability fields are generated:
-- `cost`
-- `profit`
-- `profit_margin`
+```bash
+python statistical_analysis.py
+python regression_analysis.py
+python ml_model.py
+```
 
----
+## Notes on Modularity
 
-## Business Value
+- Shared data loading and model feature preparation are centralized in `src/data_utils.py`.
+- KPI, statistical, regression, and ML logic are encapsulated in functions to avoid script-level duplication.
+- `main.py` orchestrates execution with clean imports from `src`.
 
-This project helps stakeholders:
-- Identify high-margin products and underperforming segments
-- Understand profitability drivers across regions and time
-- Make data-driven pricing and inventory decisions
-- Monitor business health with clear KPI dashboards
+## Business Recommendations
 
----
+1. Promote high-margin products to improve profit contribution.
+2. Audit discounting policies by region to protect profitability.
+3. Use predictive outputs for pricing and inventory planning.
+4. Track KPI trends monthly to identify early performance changes.
+5. Extend feature set with customer and seasonal variables for better model performance.
 
-## Future Enhancements
+## LinkedIn-ready Project Description
 
-Planned improvements include:
-- Automated ETL pipeline for recurring data refresh
-- Forecasting models for future sales and profit trends
-- Customer segmentation using clustering
-- Advanced Power BI drill-through and scenario analysis
-- Deployment of insights through a lightweight web app
+Built a modular SME Sales Profitability Analytics project using Python, Pandas, and Scikit-learn. Developed reusable analytics modules for KPI tracking, statistical diagnostics, linear regression, and random forest modeling to predict profit. Structured the codebase for production readiness with clean imports, reusable functions, and a centralized execution pipeline.
 
----
+## Resume Bullet Points
 
-## 📊 Sample Visualizations
-
-### Revenue by Product
-<p align="center">
-  <img src="assets/revenue_by_product.png" width="700">
-</p>
-
-### Profit by Region
-<p align="center">
-  <img src="assets/profit_by_region.png" width="700">
-</p>
-
-### Monthly Revenue Trend
-<p align="center">
-  <img src="assets/monthly_revenue_trend.png" width="700">
-</p>
-
----
-
-## 📈 KPI Summary
-
-Based on the cleaned dataset analysis:
-
-- 💰 **Total Revenue:** Sum of all order revenues across 2023.
-- 📊 **Total Profit:** Net profit generated after deducting total costs.
-- 🧾 **Average Order Value (AOV):** Average revenue generated per order.
-- 📦 **Total Orders:** 200 transactions analyzed.
-- 🌍 **Regions Covered:** 4 sales regions (North, South, East, West).
-- 🛍️ **Product Categories:** 5 product types.
-
-These KPIs provide a high-level performance overview of the retail sales operations and serve as key business performance indicators.
-
----
-
-## 🎯 Business Recommendations
-
-Based on the data analysis:
-
-1. 📌 **Focus on High-Margin Products**
-   - Identify products generating strong profit margins and prioritize marketing efforts for these items.
-
-2. 📌 **Optimize Regional Strategy**
-   - Regions with lower profitability may require pricing adjustments, promotional campaigns, or cost optimization strategies.
-
-3. 📌 **Leverage Peak Sales Periods**
-   - Increase inventory and marketing investment during high-revenue months to maximize seasonal gains.
-
-4. 📌 **Improve Margin Monitoring**
-   - High revenue does not always equal high profit. Regular margin analysis should guide pricing and discount decisions.
-
-5. 📌 **Data-Driven Decision Making**
-   - Implement dashboards and automated KPI tracking to continuously monitor business performance.
-
----
-
-## Author
-
-**Gazi Shoaib**
-
-If you found this project useful, feel free to connect and share feedback.
+- Designed and implemented a modular analytics codebase for SME sales profitability analysis.
+- Built reusable KPI and statistical analysis modules using pandas.
+- Developed and evaluated Linear Regression and Random Forest models for profit prediction.
+- Standardized model feature engineering and dataset preparation to reduce code duplication.
+- Delivered a production-ready project structure with centralized orchestration and clean documentation.
