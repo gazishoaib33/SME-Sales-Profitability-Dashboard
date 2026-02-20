@@ -126,6 +126,42 @@ Planned improvements include:
 
 ---
 
+## 📈 KPI Summary
+
+Based on the cleaned dataset analysis:
+
+- 💰 **Total Revenue:** Sum of all order revenues across 2023.
+- 📊 **Total Profit:** Net profit generated after deducting total costs.
+- 🧾 **Average Order Value (AOV):** Average revenue generated per order.
+- 📦 **Total Orders:** 200 transactions analyzed.
+- 🌍 **Regions Covered:** 4 sales regions (North, South, East, West).
+- 🛍️ **Product Categories:** 5 product types.
+
+These KPIs provide a high-level performance overview of the retail sales operations and serve as key business performance indicators.
+
+---
+
+## 🎯 Business Recommendations
+
+Based on the data analysis:
+
+1. 📌 **Focus on High-Margin Products**
+   - Identify products generating strong profit margins and prioritize marketing efforts for these items.
+
+2. 📌 **Optimize Regional Strategy**
+   - Regions with lower profitability may require pricing adjustments, promotional campaigns, or cost optimization strategies.
+
+3. 📌 **Leverage Peak Sales Periods**
+   - Increase inventory and marketing investment during high-revenue months to maximize seasonal gains.
+
+4. 📌 **Improve Margin Monitoring**
+   - High revenue does not always equal high profit. Regular margin analysis should guide pricing and discount decisions.
+
+5. 📌 **Data-Driven Decision Making**
+   - Implement dashboards and automated KPI tracking to continuously monitor business performance.
+
+---
+
 ## Author
 
 **Gazi Shoaib**
