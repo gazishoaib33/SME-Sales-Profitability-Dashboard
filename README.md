@@ -1,169 +1,132 @@
-<p align="center">
-  <img src="assets/project_banner.svg" width="900">
-</p>
-
-# 📊 SME Sales Data Analysis Project 
-
-This project presents an end-to-end data analysis workflow using a simulated retail sales dataset. It demonstrates data cleaning, feature engineering, and financial performance analysis using transactional sales data.
-
-The objective of this project is to:
-
-- Analyze product-level performance
-- Evaluate regional sales trends
-- Calculate revenue, cost, and profit metrics
-- Perform exploratory data analysis (EDA)
-- Prepare structured datasets for visualization and business insights
-
-The repository includes both the raw dataset and a cleaned version with engineered financial features (Revenue, Cost, Profit), making it suitable for analytical modeling, dashboard creation, and reporting.
-
-This project is designed to showcase practical data analysis skills, structured project organization, and clean dataset preparation for real-world business scenarios.
-
-## 🛠️ Tech Stack
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-- Git & GitHub
-
----
-
 # SME Sales Profitability Dashboard
 
-A professional data analytics portfolio project focused on understanding sales performance and profitability patterns for Small and Medium Enterprises (SMEs) using **Power BI** and **Python**.
-
----
+A production-ready analytics project that transforms transactional SME sales data into business intelligence using Python and machine learning.
 
 ## Project Overview
 
-This project is designed to analyze SME sales data, transform it into actionable insights, and present business performance through interactive dashboards and data storytelling.
+This repository contains:
+- Cleaned and structured sales data
+- Exploratory analysis notebooks
+- Statistical diagnostics
+- Predictive models for profit estimation
 
-The workflow includes:
-- Collecting raw sales data
-- Cleaning and transforming data using Python
-- Engineering profitability metrics (cost, profit, margin)
-- Building dashboards in Power BI for executive reporting
+The project is organized to support portfolio presentation, reproducibility, and extension into dashboards or web reporting tools.
 
----
+## Tech Stack
 
-## KPIs
+- Python 3
+- Pandas
+- Scikit-learn
+- Jupyter Notebook
 
-The project tracks key business indicators including:
-- **Total Sales Revenue**
-- **Total Cost**
-- **Total Profit**
-- **Average Profit Margin (%)**
-- **Top Performing Products / Categories**
-- **Regional Sales & Profitability Trends**
-- **Monthly Sales Growth**
+## Dataset
 
----
+Primary cleaned dataset used by analysis scripts:
+- `data/processed/sales_dataset_cleaned_with_profit.csv`
 
-## Tools Used
+Core fields include order metadata, product/region attributes, quantity, pricing, revenue, cost, and profit.
 
-- **Python** (Pandas, NumPy, Matplotlib, Seaborn) for data cleaning and analysis
-- **Jupyter Notebook** for exploratory analysis and reproducible workflows
-- **Power BI** for interactive dashboards and KPI visualization
-- **Git & GitHub** for version control and portfolio presentation
+## KPI Summary Section
 
----
+Using the cleaned dataset:
+- **Total Revenue:** `720,497`
+- **Total Profit:** `185,370`
+- **Average Order Value (AOV):** `3,602.49`
 
-## Dataset Description
+These KPIs provide an executive snapshot of commercial performance and profitability.
 
-The dataset contains transactional SME sales records. Typical fields include:
-- Order/Transaction Date
-- Product or Category
-- Quantity Sold
-- Unit Price
-- Sales Amount
-- Region / Customer Segment
+## Statistical Analysis Section
 
-During processing, additional profitability fields are generated:
-- `cost`
-- `profit`
-- `profit_margin`
+File: `statistical_analysis.py`
 
----
+What it does:
+- Selects numeric columns only
+- Computes and prints the **correlation matrix**
+- Computes and prints **variance** for numeric columns
 
-## Business Value
+Run:
+```bash
+python statistical_analysis.py
+```
 
-This project helps stakeholders:
-- Identify high-margin products and underperforming segments
-- Understand profitability drivers across regions and time
-- Make data-driven pricing and inventory decisions
-- Monitor business health with clear KPI dashboards
+## Regression Analysis Section
 
----
+File: `regression_analysis.py`
 
-## Future Enhancements
+Modeling details:
+- Algorithm: `LinearRegression`
+- Features: `Quantity`, `Discount`, `Revenue`
+- Target: `Profit`
+- Split: `train_test_split(test_size=0.2, random_state=42)`
 
-Planned improvements include:
-- Automated ETL pipeline for recurring data refresh
-- Forecasting models for future sales and profit trends
-- Customer segmentation using clustering
-- Advanced Power BI drill-through and scenario analysis
-- Deployment of insights through a lightweight web app
+Printed outputs:
+- R² Score
+- Mean Squared Error
+- Coefficients
+- Intercept
 
----
+Run:
+```bash
+python regression_analysis.py
+```
 
-## 📊 Sample Visualizations
+## Machine Learning Model Section
 
-### Revenue by Product
-<p align="center">
-  <img src="assets/revenue_by_product.png" width="700">
-</p>
+File: `ml_model.py`
 
-### Profit by Region
-<p align="center">
-  <img src="assets/profit_by_region.png" width="700">
-</p>
+Modeling details:
+- Algorithm: `RandomForestRegressor`
+- Objective: Predict `Profit`
+- Parameters: `n_estimators=100`, `max_depth=5`, `random_state=42`
 
-### Monthly Revenue Trend
-<p align="center">
-  <img src="assets/monthly_revenue_trend.png" width="700">
-</p>
+Printed output:
+- R² Score
 
----
+Run:
+```bash
+python ml_model.py
+```
 
-## 📈 KPI Summary
+## Business Recommendations Section
 
-Based on the cleaned dataset analysis:
+1. Prioritize products with higher contribution margins to maximize profit lift.
+2. Review discount strategy by region to prevent revenue growth with weak profit conversion.
+3. Use model predictions to support pricing, bundling, and inventory planning.
+4. Establish monthly KPI tracking for Revenue, Profit, and AOV to detect shifts early.
+5. Expand feature set with customer/channel seasonality for stronger forecasting performance.
 
-- 💰 **Total Revenue:** Sum of all order revenues across 2023.
-- 📊 **Total Profit:** Net profit generated after deducting total costs.
-- 🧾 **Average Order Value (AOV):** Average revenue generated per order.
-- 📦 **Total Orders:** 200 transactions analyzed.
-- 🌍 **Regions Covered:** 4 sales regions (North, South, East, West).
-- 🛍️ **Product Categories:** 5 product types.
+## LinkedIn-ready Project Description
 
-These KPIs provide a high-level performance overview of the retail sales operations and serve as key business performance indicators.
+Built an end-to-end **SME Sales Profitability Analytics** project using Python, Pandas, and Scikit-learn. Cleaned transactional sales data, engineered profitability metrics, and developed both linear and ensemble regression models to predict profit. Delivered statistical diagnostics, KPI summaries, and business recommendations in a modular, production-ready repository suitable for dashboard and reporting extensions.
 
----
+## Resume Bullet Points
 
-## 🎯 Business Recommendations
+- Developed a modular sales analytics pipeline using Python and Pandas to process and analyze SME transactional data.
+- Implemented statistical diagnostics (correlation matrix and variance profiling) for numeric business metrics.
+- Built and evaluated a Linear Regression model with train/test split, reporting R², MSE, coefficients, and intercept.
+- Built a Random Forest regression model (`n_estimators=100`, `max_depth=5`) to improve non-linear profit prediction.
+- Produced executive KPI summaries and actionable recommendations for pricing, discounting, and profitability optimization.
 
-Based on the data analysis:
+## Repository Structure
 
-1. 📌 **Focus on High-Margin Products**
-   - Identify products generating strong profit margins and prioritize marketing efforts for these items.
+```text
+.
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+├── statistical_analysis.py
+├── regression_analysis.py
+├── ml_model.py
+├── requirements.txt
+└── README.md
+```
 
-2. 📌 **Optimize Regional Strategy**
-   - Regions with lower profitability may require pricing adjustments, promotional campaigns, or cost optimization strategies.
+## Installation & Usage
 
-3. 📌 **Leverage Peak Sales Periods**
-   - Increase inventory and marketing investment during high-revenue months to maximize seasonal gains.
-
-4. 📌 **Improve Margin Monitoring**
-   - High revenue does not always equal high profit. Regular margin analysis should guide pricing and discount decisions.
-
-5. 📌 **Data-Driven Decision Making**
-   - Implement dashboards and automated KPI tracking to continuously monitor business performance.
-
----
-
-## Author
-
-**Gazi Shoaib**
-
-If you found this project useful, feel free to connect and share feedback.
+```bash
+pip install -r requirements.txt
+python statistical_analysis.py
+python regression_analysis.py
+python ml_model.py
+```
