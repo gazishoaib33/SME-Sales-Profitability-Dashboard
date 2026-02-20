@@ -1,132 +1,96 @@
 # SME Sales Profitability Dashboard
 
-A production-ready analytics project that transforms transactional SME sales data into business intelligence using Python and machine learning.
+A modular, production-ready sales analytics project for SME transactional data. It includes KPI tracking, statistical diagnostics, regression analysis, and machine learning-based profit prediction.
 
-## Project Overview
+## Project Structure
 
-This repository contains:
-- Cleaned and structured sales data
-- Exploratory analysis notebooks
-- Statistical diagnostics
-- Predictive models for profit estimation
-
-The project is organized to support portfolio presentation, reproducibility, and extension into dashboards or web reporting tools.
-
-## Tech Stack
-
-- Python 3
-- Pandas
-- Scikit-learn
-- Jupyter Notebook
-
-## Dataset
-
-Primary cleaned dataset used by analysis scripts:
-- `data/processed/sales_dataset_cleaned_with_profit.csv`
-
-Core fields include order metadata, product/region attributes, quantity, pricing, revenue, cost, and profit.
-
-## KPI Summary Section
-
-Using the cleaned dataset:
-- **Total Revenue:** `720,497`
-- **Total Profit:** `185,370`
-- **Average Order Value (AOV):** `3,602.49`
-
-These KPIs provide an executive snapshot of commercial performance and profitability.
-
-## Statistical Analysis Section
-
-File: `statistical_analysis.py`
-
-What it does:
-- Selects numeric columns only
-- Computes and prints the **correlation matrix**
-- Computes and prints **variance** for numeric columns
-
-Run:
-```bash
-python statistical_analysis.py
+```text
+project/
+│── data/
+│── notebooks/
+│── src/
+│   ├── kpi.py
+│   ├── statistical_analysis.py
+│   ├── regression_analysis.py
+│   ├── ml_model.py
+│── main.py
+│── README.md
+│── requirements.txt
 ```
 
-## Regression Analysis Section
+## Features
 
-File: `regression_analysis.py`
+### 1) KPI Summary
+- Total Revenue
+- Total Profit
+- Average Order Value (AOV)
 
-Modeling details:
-- Algorithm: `LinearRegression`
+### 2) Statistical Analysis
+- Correlation matrix for numeric columns
+- Variance for numeric columns
+- Implemented using **pandas only**
+
+### 3) Regression Analysis
+- Model: `LinearRegression` (scikit-learn)
 - Features: `Quantity`, `Discount`, `Revenue`
 - Target: `Profit`
 - Split: `train_test_split(test_size=0.2, random_state=42)`
+- Outputs:
+  - R² Score
+  - Mean Squared Error (MSE)
+  - Coefficients
+  - Intercept
 
-Printed outputs:
-- R² Score
-- Mean Squared Error
-- Coefficients
-- Intercept
-
-Run:
-```bash
-python regression_analysis.py
-```
-
-## Machine Learning Model Section
-
-File: `ml_model.py`
-
-Modeling details:
-- Algorithm: `RandomForestRegressor`
-- Objective: Predict `Profit`
+### 4) Machine Learning Model
+- Model: `RandomForestRegressor`
+- Target: `Profit`
 - Parameters: `n_estimators=100`, `max_depth=5`, `random_state=42`
+- Output: R² Score
 
-Printed output:
-- R² Score
-
-Run:
-```bash
-python ml_model.py
-```
-
-## Business Recommendations Section
-
-1. Prioritize products with higher contribution margins to maximize profit lift.
-2. Review discount strategy by region to prevent revenue growth with weak profit conversion.
-3. Use model predictions to support pricing, bundling, and inventory planning.
-4. Establish monthly KPI tracking for Revenue, Profit, and AOV to detect shifts early.
-5. Expand feature set with customer/channel seasonality for stronger forecasting performance.
-
-## LinkedIn-ready Project Description
-
-Built an end-to-end **SME Sales Profitability Analytics** project using Python, Pandas, and Scikit-learn. Cleaned transactional sales data, engineered profitability metrics, and developed both linear and ensemble regression models to predict profit. Delivered statistical diagnostics, KPI summaries, and business recommendations in a modular, production-ready repository suitable for dashboard and reporting extensions.
-
-## Resume Bullet Points
-
-- Developed a modular sales analytics pipeline using Python and Pandas to process and analyze SME transactional data.
-- Implemented statistical diagnostics (correlation matrix and variance profiling) for numeric business metrics.
-- Built and evaluated a Linear Regression model with train/test split, reporting R², MSE, coefficients, and intercept.
-- Built a Random Forest regression model (`n_estimators=100`, `max_depth=5`) to improve non-linear profit prediction.
-- Produced executive KPI summaries and actionable recommendations for pricing, discounting, and profitability optimization.
-
-## Repository Structure
-
-```text
-.
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-├── statistical_analysis.py
-├── regression_analysis.py
-├── ml_model.py
-├── requirements.txt
-└── README.md
-```
-
-## Installation & Usage
+## Installation
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Usage
+
+Run the full workflow:
+
+```bash
+python main.py
+```
+
+Run individual modules:
+
+```bash
 python statistical_analysis.py
 python regression_analysis.py
 python ml_model.py
 ```
+
+## Notes on Modularity
+
+- Shared data loading and model feature preparation are centralized in `src/data_utils.py`.
+- KPI, statistical, regression, and ML logic are encapsulated in functions to avoid script-level duplication.
+- `main.py` orchestrates execution with clean imports from `src`.
+
+## Business Recommendations
+
+1. Promote high-margin products to improve profit contribution.
+2. Audit discounting policies by region to protect profitability.
+3. Use predictive outputs for pricing and inventory planning.
+4. Track KPI trends monthly to identify early performance changes.
+5. Extend feature set with customer and seasonal variables for better model performance.
+
+## LinkedIn-ready Project Description
+
+Built a modular SME Sales Profitability Analytics project using Python, Pandas, and Scikit-learn. Developed reusable analytics modules for KPI tracking, statistical diagnostics, linear regression, and random forest modeling to predict profit. Structured the codebase for production readiness with clean imports, reusable functions, and a centralized execution pipeline.
+
+## Resume Bullet Points
+
+- Designed and implemented a modular analytics codebase for SME sales profitability analysis.
+- Built reusable KPI and statistical analysis modules using pandas.
+- Developed and evaluated Linear Regression and Random Forest models for profit prediction.
+- Standardized model feature engineering and dataset preparation to reduce code duplication.
+- Delivered a production-ready project structure with centralized orchestration and clean documentation.
