@@ -12,6 +12,9 @@ def run_pipeline() -> None:
     print()
     print_statistical_summary()
     print()
+    print_regression_analysis()
+    print()
+    print_ml_model_results()
 
     try:
         print_regression_analysis()

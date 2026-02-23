@@ -1,6 +1,10 @@
 """Linear regression analysis module for profit prediction."""
 
 from pathlib import Path
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+
 from src.data_utils import DEFAULT_DATA_PATH, FEATURE_COLUMNS, get_model_data, load_dataset
 
 

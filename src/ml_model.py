@@ -1,6 +1,10 @@
 """Machine learning model module using RandomForestRegressor."""
 
 from pathlib import Path
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split
+
 from src.data_utils import DEFAULT_DATA_PATH, get_model_data, load_dataset
 
 
