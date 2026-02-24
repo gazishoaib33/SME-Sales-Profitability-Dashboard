@@ -16,18 +16,6 @@ def run_pipeline() -> None:
     print()
     print_ml_model_results()
 
-    try:
-        print_regression_analysis()
-    except ImportError as exc:
-        print(f"Regression analysis skipped: {exc}")
-
-    print()
-
-    try:
-        print_ml_model_results()
-    except ImportError as exc:
-        print(f"ML model analysis skipped: {exc}")
-
 
 if __name__ == "__main__":
     run_pipeline()

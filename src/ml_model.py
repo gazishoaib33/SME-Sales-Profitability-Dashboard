@@ -10,13 +10,6 @@ from src.data_utils import DEFAULT_DATA_PATH, get_model_data, load_dataset
 
 def run_ml_model(data_path: Path = DEFAULT_DATA_PATH) -> dict:
     """Train random forest model and return R² score."""
-    try:
-        from sklearn.ensemble import RandomForestRegressor
-        from sklearn.metrics import r2_score
-        from sklearn.model_selection import train_test_split
-    except ImportError as exc:
-        raise ImportError("scikit-learn is required for ML model execution. Install from requirements.txt") from exc
-
     df = load_dataset(data_path)
     X, y = get_model_data(df)
 
@@ -29,7 +22,6 @@ def run_ml_model(data_path: Path = DEFAULT_DATA_PATH) -> dict:
 
     model = RandomForestRegressor(
         n_estimators=100,
-        max_depth=5,
         random_state=42,
     )
     model.fit(X_train, y_train)
@@ -42,4 +34,5 @@ def print_ml_model_results(data_path: Path = DEFAULT_DATA_PATH) -> None:
     """Print random forest model results."""
     metrics = run_ml_model(data_path)
     print("=== Machine Learning Model (RandomForestRegressor) ===")
+    print("Features: Quantity, Selling_Price, Cost_Price")
     print(f"R² Score: {metrics['r2_score']:.4f}")
